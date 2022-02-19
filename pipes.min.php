@@ -1,0 +1,1 @@
+<?php class Pipe{static function new(...$a){$v=array_shift($a);foreach($a as $p)$v=$p($v);return $v;}}function pipe(){return Pipe::new(...func_get_args());}
