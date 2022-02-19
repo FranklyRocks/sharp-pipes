@@ -1,5 +1,5 @@
 # PHP Pipes
-PHP pipes in 276 bytes.
+PHP pipes in 263 bytes.
 
 ## Usage
 
