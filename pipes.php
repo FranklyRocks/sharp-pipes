@@ -1,5 +1,4 @@
 <?php
-
 class Pipe {
     public static function new(...$args) : mixed {
         $value = array_shift($args);
