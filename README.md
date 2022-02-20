@@ -8,7 +8,8 @@ PHP pipes in 156 bytes
 pipe($v, 
     fn($v) => function1($v), 
     fn($v) => function2($v), 
-    fn($v) => function3($v)
+    fn($v) => function3($v),
+    ...
 ); 
 ```
 
