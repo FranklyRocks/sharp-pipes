@@ -4,10 +4,12 @@ PHP pipes in 156 bytes
 ## Usage
 
 ```php
-
-// $v is passed through every function in the pipe
-
-pipe($v, fn($v) => function1($v), fn($v) => function2($v), ...); // returns $v
+// Equivalent to: function3(function2(function1($v)))
+pipe($v, 
+    fn($v) => function1($v), 
+    fn($v) => function2($v), 
+    fn($v) => function3($v)
+); 
 ```
 
 ## Example
@@ -20,7 +22,7 @@ function slug(string $s) : string {
     );
 }
 
-slug("Xiaomi Redmi 7A"); // xiaomi-redmi-7a
+slug("10 WAYS to EAT more HEALTHY"); // 10-ways-to-eat-more-healthy
 ```
 
 ## Code explined
@@ -33,7 +35,7 @@ class Pipe {
         $value = array_shift($args);
         
         // Call the functions passing $value and assign its return
-        foreach($args as $param) $value = $param($value);
+        foreach($args as $func) $value = $func($value);
         
         // Return computed value
         return $value;
