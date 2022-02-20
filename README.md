@@ -5,6 +5,7 @@ PHP pipes in 156 bytes
 
 ```php
 // Equivalent to: function3(function2(function1($v)))
+
 pipe($v, 
     fn($v) => function1($v), 
     fn($v) => function2($v), 
