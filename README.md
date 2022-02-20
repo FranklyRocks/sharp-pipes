@@ -17,7 +17,7 @@ pipe($v,
 ## Example
 
 ```php
-function slug(string $s) : string {
+function slug(string $s) {
     return pipe($s, 
       fn($s) => strtolower($s), 
       fn($s) => str_replace(" ", "-", $s)
@@ -31,7 +31,7 @@ slug("10 WAYS to EAT more HEALTHY"); // 10-ways-to-eat-more-healthy
 
 ```php
 class Pipe {
-    public static function new(...$args) : mixed {
+    public static function new(...$args) {
         
         // Retrive first argument as initial value
         $value = array_shift($args);
@@ -46,7 +46,7 @@ class Pipe {
 }
 
 // Helper function
-function pipe() : mixed {
+function pipe() {
     return Pipe::new(...func_get_args());
 }
 ```
