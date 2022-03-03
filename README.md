@@ -27,7 +27,7 @@ function slug(string $s) {
 slug("10 WAYS to EAT more HEALTHY"); // 10-ways-to-eat-more-healthy
 ```
 
-## Code explined
+## Code explained
 
 ```php
 class Pipe {
